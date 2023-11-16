@@ -27,7 +27,7 @@ def download_csv(request):
                     raise ValidationError("No data available for the selected timeframe.")
                 
                 response = HttpResponse(content_type="text/csv")
-                response["Content-Disposition"] = f"attachment; filename='exchange_rates_{start_date}_{end_date}.csv'"
+                response["Content-Disposition"] = f'attachment; filename="exchange_rates_{start_date}_{end_date}.csv"'
 
                 writer = csv.writer(response)
                 writer.writerow(["Date", "Base Currency", "USD Rate", "GBP Rate", "RON Rate"])
