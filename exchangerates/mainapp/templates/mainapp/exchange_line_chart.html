@@ -1,0 +1,11 @@
+{% extends 'mainapp/header.html' %}
+
+{% block content %}
+    {% include 'mainapp/home.html' %}
+
+    <div class="mt-5">
+        {{ chart_html_usd|safe }}
+        {{ chart_html_gbp|safe }}
+        {{ chart_html_ron|safe }}
+    </div>
+{% endblock %}

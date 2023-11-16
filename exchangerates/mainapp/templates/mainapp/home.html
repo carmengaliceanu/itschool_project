@@ -1,0 +1,21 @@
+{% extends 'mainapp/header.html' %}
+
+{% block content %}
+  <div class="mt-5">
+    <div class="d-flex align-items-center">
+      <div>
+        {% load static %}
+        <a href="{% url 'home' %}">
+          <img src="{% static 'img/logo.jpg' %}" alt="Exchange Logo" class="logo" style="max-width: 100px; height: auto;">
+        </a>
+      </div>
+      <div class="ms-3">
+        <h1>Welcome to Exchange Rates App</h1>
+        <p>Explore exchange calculator, download CSV files and view rates chart.</p>
+      </div>
+    </div>
+  </div>
+
+  {% include 'mainapp/includes/navbar.html' %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'mainapp/header.html' %}
+
+{% block content %}
+    {% include 'mainapp/home.html' %}
+    
+    <div class="mt-5">
+        <h2>Exchange Calculator</h2>
+        <form method="post" action="{% url 'exchange_calculator' %}">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger" role="alert" style="padding: 5px;">
+              {{ form.non_field_errors.as_text }}
+            </div>
+            {% endif %}
+            <div class="mb-3">
+                {% if form.amount_in_eur.errors %}
+                <div class="alert alert-danger" role="alert" style="padding: 5px;">
+                    {{ form.amount_in_eur.errors.0 }}
+                </div>
+                {% endif %}
+                <label for="{{ form.amount_in_eur.id_for_label }}">Amount in EUR:</label>
+                {{ form.amount_in_eur }}
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+    </div>
+{% endblock %}

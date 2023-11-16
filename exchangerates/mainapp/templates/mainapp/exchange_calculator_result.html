@@ -1,0 +1,44 @@
+{% extends 'mainapp/header.html' %}
+
+{% block content %}
+    {% include 'mainapp/home.html' %}
+    
+    <div class="mt-5">
+        <h2 class="mb-4">Exchange Calculator Result on {{ current_date }}</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Amount in EUR:</h5>
+                        <p class="card-text">{{ amount_in_eur }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Amount in USD:</h5>
+                        <p class="card-text">{{ amount_in_usd }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Amount in GBP:</h5>
+                        <p class="card-text">{{ amount_in_gbp }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Amount in RON:</h5>
+                        <p class="card-text">{{ amount_in_ron }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="mt-4 btn btn-secondary" href="{% url 'exchange_calculator' %}">Back to Calculator</a>
+    </div>
+{% endblock %}
